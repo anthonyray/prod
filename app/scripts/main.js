@@ -6,6 +6,8 @@ window.Prod = {
     Collections: {},
     Views: {},
     Routers: {},
+    PubSub : {},
+
     init: function () {
         'use strict';
         // Mock data
@@ -17,22 +19,24 @@ window.Prod = {
           new this.Models.Annotation({start : 12, end: 17})
         ]
 
-        var mockCollection = new this.Collections.Annotation( mockAnnotations )
+        var mockCollection = new this.Collections.Annotation( mockAnnotations );
+
+        this.pubsub = this.PubSub;
 
         this.router = new this.Routers.Annotation();
         Backbone.history.start({pushState: true});
 
         var song  = new this.Views.Song(
-          { model : new this.Models.Song()});
+          { model : new this.Models.Song(), pubsub : this.pubsub });
 
         this.player = new this.Views.Player(
-          { collection : mockCollection  });
+          { collection : mockCollection, pubsub : this.pubsub  });
 
         new this.Views.Annotations(
-          { collection : mockCollection }
+          { collection : mockCollection, pubsub : this.pubsub }
         )
 
-        new this.Views.Annotation({model : mockAnnotations[2]});
+        new this.Views.Annotation({model : mockAnnotations[2], pubsub : this.pubsub});
 
         this.player.play();
     }
