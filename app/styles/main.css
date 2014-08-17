@@ -1,0 +1,296 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+body
+{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h5
+{
+  font-size : 1.3em;
+}
+.song{
+  position : relative;
+  max-width:95%;
+  margin-right : auto;
+  margin-left : auto;
+}
+
+.song h1{
+  color : #bdc3c7;
+}
+
+.song .title{
+  color : #BBBBBB
+}
+.audioplayer{
+  position : relative;
+  border-radius : 10px;
+  margin-top : 50px;
+  border-width : 5px;
+  max-width:95%;
+  min-height:50px;
+  margin-right : auto;
+  margin-left : auto;
+  background-color :rgba(236,240,241,0.2);
+  opacity : 100%;
+}
+
+.audioplayer .progress{
+  background-color :#ecf0f1 ;
+  height : 100%;
+  width : 0%;
+  position : absolute;
+  border-right-style : solid;
+  border-right-color : #7f8c8d;
+
+  /*-webkit-transition: width 1s ease-in-out;
+  -moz-transition: width 1s ease-in-out;
+  -o-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;*/
+}
+
+.audioplayer .container{
+  padding : 15px;
+}
+
+.audioplayer .container .progressbar{
+
+  border-radius : 5px;
+  height : 10px;
+  position : relative;
+  margin-bottom : 15px;
+
+}
+
+.audioplayer .container .progressbar:hover{
+  box-shadow: 0 0 10px #9ecaed;
+}
+
+.p1 {
+  background-color : #1abc9c;
+
+}
+
+.p2 {
+  background-color : #e67e22;
+
+}
+
+.p3 {
+  background-color : #9b59b6;
+}
+
+.p4 {
+  background-color : #e74c3c;
+
+}
+
+.p5 {
+  background-color : #34495e;
+
+}
+
+.p6 {
+  background-color : #2980b9;
+
+}
+
+
+.annotations{
+  margin-right : auto;
+  margin-left : auto;
+  position : relative;
+  max-width:95%;
+  padding : 15px;
+  overflow:hidden;
+}
+
+.annotations .title {
+    color : #BBBBBB;
+}
+
+.annotation{
+  margin-bottom : 20px;
+  max-height : 95px;
+  transition: max-height 0.3s, margin 0.3s, transform 0.3s 0.3s, opacity 0.2s 0.3s;
+}
+
+.annotation.filtered-out{
+  max-height : 0;
+  opacity : 0;
+  margin-bottom : 0;
+  transition : transform 0.3s, opacity 0.5s, max-height 0.3s 0.3s, margin 0.3s 0.3s, padding 0.3s 0.3s;
+}
+
+.annotation .votes{
+  display : inline-block;
+  margin-right : 20px;
+  color : #BBBBBB;
+  text-align : center;
+}
+.annotation .votes .voteup{
+  width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #BBBBBB;
+  margin-bottom : 5px;
+}
+
+
+.annotation .info {
+    display : inline-block;
+}
+.annotation .info h4{
+    font-size : 1.2em;
+    margin-bottom : 5px;
+}
+.annotation .info .details{
+  margin-top : 0px;
+  color : #BBBBBB
+}
+
+.annotation .side-info {
+    display : inline-block;
+    vertical-align: bottom;
+
+}
+.annotation .side-info .icon {
+    width : 75px;
+    height : 75px;
+    border-radius : 50%;
+    margin-right : 25px;
+}
+
+.i1{
+  background-color : #1abc9c;
+}
+.i2{
+  background-color : #e67e22;
+}
+.i3{
+  background-color : #9b59b6;
+}
+.i4{
+  background-color : #e74c3c;
+}
+.i5{
+  background-color : #34495e;
+}
+.i6{
+  background-color : #2980b9;
+}
+
+.side-panel{
+  position : fixed;
+  overflow-y: auto;
+  background-color : white;
+  z-index : 1000;
+  left : 45%;
+  top : 0px;
+  width : 50%;
+  min-height : 100%;
+  box-shadow: -10px 0px 10px #EEEEEE;
+  padding-left : 20px;
+  padding-right : 20px;
+  padding-top : 15px;
+
+  -webkit-transition: left 0.2s ease-in-out;
+  -moz-transition: left 0.2s ease-in-out;
+  -o-transition: left 0.2s ease-in-out;
+  transition: left 0.2s ease-in-out;
+
+}
+
+.side-panel .element .votes{
+
+    display : inline-block;
+    vertical-align :center;
+    margin-right : 10px;
+}
+
+.side-panel .element .votes .voteup{
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #BBBBBB;
+  margin-bottom : 5px;
+
+}
+.side-panel .element .votes .upvotes{
+  margin-top : 0px;
+  text-align : center;
+}
+
+.side-panel .element .side-info{
+  display : inline-block;
+  vertical-align: bottom;
+}
+
+.side-panel .element .side-info .icon{
+  width : 75px;
+  height : 75px;
+  border-radius : 50%;
+  margin-right : 25px;
+}
+
+.side-panel .element .info {
+  display : inline-block;
+}
+
+.side-panel .element .info h4{
+    font-size : 1.5em;
+    margin-bottom : 0px;
+}
+
+.side-panel .element .info .details {
+  margin-top : 2px;
+}
+
+.side-panel .submission {
+float : right;
+margin-top : 0px;
+margin-right : 50px;
+
+}
+
+.side-panel .annotation-detail h2{
+  color : #BBBBBB;
+}
+.side-panel .comments h2{
+  color : #BBBBBB;
+}
+
+.side-panel .comments .comment {
+  border-top : solid #ecf0f1 2px;
+  padding-top : 10px;
+}
+
+.side-panel .comments .profile-pic{
+  width : 40px;
+  height : 40px;
+  border-radius : 50%;
+  background-color : #BBBBBB;
+  display : inline-block;
+
+}
+
+.side-panel .comments .commenter-info{
+  vertical-align : top;
+  display : inline-block;
+  margin-left : 20px;
+}
+
+.side-panel .comments .commenter-info p{
+  margin : 0px;
+}
+
+.side-panel .comments .commenter-info i{
+  color : #BBBBBB
+}
+
+.side-panel .comments .comment .message{
+  padding-left : 60px;
+}
