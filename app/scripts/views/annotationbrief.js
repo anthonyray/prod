@@ -17,7 +17,8 @@ Prod.Views = Prod.Views || {};
 
         events: {},
 
-        initialize: function () {
+        initialize: function (options) {
+            this.pubsub = {} || options.pubsub;
             this.listenTo(this.model, 'change:played', this.played);
             this.render();
         },

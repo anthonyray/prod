@@ -21,7 +21,8 @@ Prod.Views = Prod.Views || {};
 
         events: {},
 
-        initialize: function (){
+        initialize: function (options){
+            this.pubsub = {} || options.pubsub;
             this.listenTo(this.collection, 'add', this.addOne);
             this.collection.forEach(this.addOne,this);
             this.render();
