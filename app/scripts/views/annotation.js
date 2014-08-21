@@ -19,19 +19,15 @@ Prod.Views = Prod.Views || {};
 
         events: {},
 
-        initialize: function () {
+        initialize: function (options) {
+            this.pubsub = {} || options.pubsub;
             this.listenTo(this.model, 'change', this.render);
-            Prod.router.on('route:weird',this.putain);
             this.render();
         },
 
         render: function () {
             this.$el.html(this.template(this.model.toJSON()));
-        },
-
-        putain : function(){
-          alert("IMGONNASWIM");
-        },
+        }
 
     });
 
