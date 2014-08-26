@@ -27,7 +27,7 @@ Prod.Views = Prod.Views || {};
         position : 0,
 
         initialize: function (options) {
-            this.pubsub = {} || options.pubsub;
+            this.pubsub = options.pubsub;
             this.listenTo(this.collection,'active',this.filterAll);
             this.collection.forEach(this.addAnnotation,this);
             this.render();
@@ -57,7 +57,7 @@ Prod.Views = Prod.Views || {};
         },
 
         addAnnotation : function(model){
-          this.subviews.push(new Prod.Views.Annotationbar({model : model}));
+          this.subviews.push(new Prod.Views.Annotationbar({model : model, pubsub: this.pubsub}));
         },
 
         renderAnnotation: function(view){

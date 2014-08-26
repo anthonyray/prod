@@ -20,13 +20,15 @@ Prod.Views = Prod.Views || {};
         events: {},
 
         initialize: function (options) {
-            this.pubsub = {} || options.pubsub;
             this.listenTo(this.model, 'change', this.render);
-            this.render();
         },
 
         render: function () {
             this.$el.html(this.template(this.model.toJSON()));
+        },
+
+        select: function(model){
+          console.log(model)
         }
 
     });

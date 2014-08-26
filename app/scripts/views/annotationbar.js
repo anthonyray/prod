@@ -16,16 +16,21 @@ Prod.Views = Prod.Views || {};
         className: '',
 
         events: {
+          'click' : 'select'
         },
 
         initialize: function (options) {
-            this.pubsub = {} || options.pubsub;
+            this.pubsub = options.pubsub;
             this.listenTo(this.model, 'change', this.render);
         },
 
         render: function () {
             this.$el.html(this.template(this.model.toJSON()));
             return this;
+        },
+
+        select : function(){
+          this.pubsub.trigger('annotation:select', this.model);
         }
 
     });

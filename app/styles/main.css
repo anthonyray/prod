@@ -184,7 +184,7 @@ h5
 
 .side-panel{
   position : fixed;
-  overflow-y: auto;
+  overflow-y: visible;
   background-color : white;
   z-index : 1000;
   left : 45%;
@@ -201,6 +201,10 @@ h5
   -o-transition: left 0.2s ease-in-out;
   transition: left 0.2s ease-in-out;
 
+}
+
+.side-panel.hidden{
+  left : 90%;
 }
 
 .side-panel .element .votes{
